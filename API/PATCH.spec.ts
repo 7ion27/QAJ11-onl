@@ -10,13 +10,13 @@ describe("PUT request", () => {
     response = await superagent.get(`${userLink}/${id}`);
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty(ResponseProperties.ID, 666);
-    expect(response.body).not.toHaveProperty(ResponseProperties.NAME);
-    expect(response.body).not.toHaveProperty(ResponseProperties.USERNAME);
-    expect(response.body).not.toHaveProperty(ResponseProperties.EMAIL);
-    expect(response.body).not.toHaveProperty(ResponseProperties.ADDRESS);
-    expect(response.body).not.toHaveProperty(ResponseProperties.PHONE);
-    expect(response.body).not.toHaveProperty(ResponseProperties.WEBSITE);
-    expect(response.body).not.toHaveProperty(ResponseProperties.COMPANY);
+    expect(response.body).toHaveProperty(ResponseProperties.NAME);
+    expect(response.body).toHaveProperty(ResponseProperties.USERNAME);
+    expect(response.body).toHaveProperty(ResponseProperties.EMAIL);
+    expect(response.body).toHaveProperty(ResponseProperties.ADDRESS);
+    expect(response.body).toHaveProperty(ResponseProperties.PHONE);
+    expect(response.body).toHaveProperty(ResponseProperties.WEBSITE);
+    expect(response.body).toHaveProperty(ResponseProperties.COMPANY);
   });
 
   it("Put post title for photo", async () => {
@@ -26,9 +26,9 @@ describe("PUT request", () => {
     response = await superagent.get(`${photoLink}/${title}`);
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty(ResponseProperties.TITLE, commentTitle);
-    expect(response.body).not.toHaveProperty(ResponseProperties.ALBUMID);
-    expect(response.body).not.toHaveProperty(ResponseProperties.ID);
-    expect(response.body).not.toHaveProperty(ResponseProperties.URL);
-    expect(response.body).not.toHaveProperty(ResponseProperties.THUMBNAILURL);
+    expect(response.body).toHaveProperty(ResponseProperties.ALBUMID);
+    expect(response.body).toHaveProperty(ResponseProperties.ID);
+    expect(response.body).toHaveProperty(ResponseProperties.URL);
+    expect(response.body).toHaveProperty(ResponseProperties.THUMBNAILURL);
   });
 });
