@@ -103,7 +103,7 @@ export enum passwordParameters {
 }
 
 export enum resultsParameters {
-  email = 'alex21vek@yopmail.com',
+  email = 'starcew.s@mail.ru',
   orders = 'Мои заказы',
   data = 'Личные данные',
   bonus = 'Бонусный счет',
